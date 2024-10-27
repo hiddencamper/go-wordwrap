@@ -9,6 +9,12 @@ func WordWrap(s string, w int) string {
 
 	for len(s) > w {
 		lastIndex := strings.LastIndex(s[:w], " ")
+		newlineIndex := strings.LastIndex(s[:w], "\n")
+		if newlineIndex < lastIndex && newlineIndex > 0 {
+			out = append(out, s[:newlineIndex])
+			s = s[newlineIndex+1:]
+			continue
+		}
 		if lastIndex == -1 {
 			lastIndex = w
 		}
