@@ -17,5 +17,5 @@ func TestWordWrap(t *testing.T) {
 	s = WordWrap(s, 1)
 	t.Log(s)
 	s = WordWrap(s, 0)
-
+	t.Log(s)
 }
