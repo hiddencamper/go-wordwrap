@@ -14,4 +14,8 @@ func TestWordWrap(t *testing.T) {
 	s = "\nabcde fghjiklmnopqrstuvwsyz"
 	s = WordWrap(s, 5)
 	t.Log(s)
+	s = WordWrap(s, 1)
+	t.Log(s)
+	s = WordWrap(s, 0)
+
 }

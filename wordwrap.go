@@ -19,6 +19,9 @@ import (
 // joined together with newlines (\n) in between.
 func WordWrap(s string, w int) string {
 	var out []string
+	if w <= 0 {
+		panic("WordWrap: width must be greater than 0\n")
+	}
 	for len(s) > w {
 		newlineIndex := strings.LastIndex(s[:w], "\n")
 		if newlineIndex >= 0 {
